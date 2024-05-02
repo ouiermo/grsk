@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa de Riego</title>
+  <style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    position: relative;
+    font-family: 'Helvetica', sans-serif;
+  }
+
+  .map-container {
+    height: calc(100% - 150px); /* Resta el alto del footer */
+    width: 100%;
+    position: relative;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .score-container {
+    position: absolute;
+    bottom: 30px; /* Se ajusta para no superponerse al footer */
+    left: 30%; /* Centrado horizontalmente */
+    transform: translateX(-50%); /* Ajuste fino para centrar exactamente */
+    max-width: 15%; /* Un tercio del ancho del contenedor del mapa */
+  }
+
+  .score-container img {
+    max-width: 50%;
+    height: auto;
+  }
+
+  .footer-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #f5f5dc; /* Color de fondo beige */
+    height: 150px; /* Altura del footer */
+    flex-wrap: wrap; /* Asegura que el contenido se ajuste en pantallas pequeñas */
+    padding: 0 20px; /* Espacio a los lados */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho */
+  }
+
+  .image-text-container {
+    width: 66.66%; /* Dos tercios del ancho */
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .image-container img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 20px;
+  }
+
+  .text-container {
+    flex-grow: 1;
+  }
+
+  .description-container {
+    width: 33.33%; /* Un tercio del ancho */
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h3, h4, p {
+    margin: 0;
+  }
+
+  h4 {
+    font-weight: bold;
+  }
+
+  .description-container p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: #333;
+  }
+
+  .enter-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+  }
+
+@media (max-width: 768px) {
+     .footer-container {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+     }
+    .image-text-container, .description-container {
+    width: 50%;
+    }
+    .score-container {
+      bottom: 100%; /* Asegura que el score no se superponga al footer */
+    max-width: 50%; /* Aumenta el ancho en dispositivos móviles para mejor visualización */
+      max-height: 50px; /* Asegura que la imagen del score no sea demasiado alta */
+    }
+    
+    .score-container img {
+    max-width: 30%; /* Reduce el tamaño de la imagen en móviles */
+    }
+}
+  </style>
+</head>
+<body>
+
+<div class="map-container">
+  <iframe src="mapa_riesgos.html"></iframe>
+  <div class="score-container">
+    <img src="https://dev.ingenai.cl/grsk/img/0.png" alt="Score GeoRisk®">
+  </div>
+</div>
+
+<div class="footer-container">
+  <div class="image-text-container">
+    <div class="image-container">
+      <img src="http://dev.ingenai.cl/grsk/img/sello.png" alt="Sello">
+    </div>
+    <div class="text-container">
+      <h3>Proyecto Terrenos Puerto Varas</h3>
+      <p>www.georisk.global<br>+56 9 85336183<br>demo@ingenai.cl</p>
+    </div>
+  </div>
+  <div class="description-container">
+    <p>
+      <strong>Proyecto Verificado GeoRisk®</strong><br>
+      Las propiedades identificadas de este proyecto, han sido verificadas por GeoRisk®, en sus Riesgos GeoClimáticos y Ambientales y han sido puestos a libre disposición voluntariamente por su administrador para sus clientes.
+    </p>
+    <a href="https://bit.ly/3Thcwx4" class="enter-button">entrar</a>
+  </div>
+</div>
+
+</body>
+</html>
+
+
